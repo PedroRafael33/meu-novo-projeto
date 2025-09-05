@@ -10,48 +10,48 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    /* Para empilhar as caixas principal e estendida */
+
     align-items: center;
     justify-content: center;
     background-image: url("https://fastly.picsum.photos/id/928/1920/1089.jpg?hmac=ibBv5vupfgS6CHNYMLuiwowMAbFAwx1gjQtCiU_d5_Q");
     background-size: cover;
     padding: 20px;
-    /* Adiciona um padding para não colar nas bordas */
+
     min-height: 100vh;
-    /* Garante altura mínima, mas permite que o conteúdo seja maior */
+
     overflow-y: auto;
-    /* Adiciona barra de rolagem vertical se o conteúdo exceder a altura da tela */
+
 }
 
-/* Estilos para o Spinner de Carregamento */
+
 #loading-spinner {
     position: fixed;
-    /* Fixa o spinner na tela */
+
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Fundo semi-transparente para cobrir a tela */
+
     display: flex;
-    /* Para centralizar o spinner interno */
+
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    /* Garante que ele fique por cima de tudo */
+
 }
 
 .spinner {
     border: 8px solid rgba(255, 255, 255, 0.3);
-    /* Cor da parte de trás do spinner */
+
     border-top: 8px solid #ffffff;
-    /* Cor da parte giratória do spinner */
+
     border-radius: 50%;
-    /* Torna-o redondo */
+
     width: 60px;
     height: 60px;
     animation: spin 1s linear infinite;
-    /* Animação de rotação */
+
 }
 
 @keyframes spin {
@@ -67,10 +67,10 @@ body {
 .caixa-maior {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 25px;
-    padding: 10px; /* Reduzir para 10px */
+    padding: 10px;
     width: 95%;
     max-width: 450px;
-    margin-bottom: 15px; /* Reduzir margem inferior */
+    margin-bottom: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -78,17 +78,17 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 10px; /* Reduzir margem inferior */
+    margin-bottom: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 25px;
-    padding: 5px 10px; /* Reduzir padding interno */
+    padding: 5px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .input-cidade {
     border: none;
     outline: none;
-    font-size: 18px; /* Reduzir para 18px */
+    font-size: 18px;
     background-color: transparent;
     color: #ffffff;
     width: calc(100% - 50px);
@@ -98,52 +98,52 @@ body {
 
 .input-cidade::placeholder {
     color: rgba(255, 255, 255, 0.7);
-    /* Cor branca com um pouco de transparência */
+
 }
 
 .botao-busca {
     border: none;
     outline: none;
     border-radius: 25px;
-    /* Mantém o arredondamento visual */
+
     background-color: transparent;
-    /* FUNDO TRANSPARENTE para mostrar o background do .busca-container */
+
     cursor: pointer;
     width: 40px;
-    /* Largura para o botão de busca */
+
     height: 40px;
-    /* Altura para o botão de busca */
+
     display: flex;
     align-items: center;
     justify-content: center;
     border-left: none;
-    /* REMOVER BORDA para que input e botão pareçam contínuos */
+
     margin-left: 0;
 }
 
 .img-busca {
     width: 25px;
-    /* Aumenta um pouco o tamanho do ícone de busca */
+
     filter: invert(100%);
-    /* Inverte as cores para torná-lo branco e mais visível */
+
 }
 
 .caixa-tempo-atual {
-    margin-top: 5px; /* Reduzir para 5px */
+    margin-top: 5px;
     text-align: center;
 }
 
 .cidade {
     color: #ffffff;
-    font-size: 26px; /* Aumentar ligeiramente para destaque */
-    font-weight: 400; /* Um pouco mais encorpado que o 300 */
-    margin-bottom: 8px; /* Reduzir um pouco a margem inferior */
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 8px;
 }
 
 .temp {
-    font-size: 30px; /* Reduzir para 30px */
+    font-size: 30px;
     color: #ffffff;
-    margin-top: 10px; /* Reduzir margem superior */
+    margin-top: 10px;
     font-weight: 700;
 }
 
@@ -151,26 +151,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px; /* Reduzir para 10px */
-    margin-bottom: 10px; /* Reduzir para 10px */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .img-previsao {
-    width: 50px; /* Reduzir para 50px */
+    width: 50px;
     height: 50px;
 }
 
 .texto-previsao {
     color: #ffffff;
-    margin-left: 10px; /* Reduzir margem */
+    margin-left: 10px;
     text-transform: capitalize;
-    font-size: 1em; /* Reduzir para 1em */
+    font-size: 1em;
 }
 
-.umidade, .sensacao-termica, .velocidade-vento, .pressao-atm {
+.umidade,
+.sensacao-termica,
+.velocidade-vento,
+.pressao-atm {
     color: #ffffff;
-    margin-top: 5px; /* Reduzir para 5px */
-    font-size: 0.9em; /* Reduzir para 0.9em */
+    margin-top: 5px;
+    font-size: 0.9em;
 }
 
 .mensagem-erro {
@@ -181,19 +184,19 @@ body {
 .caixa-previsao-estendida {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 25px;
-    padding: 10px; /* Reduzir para 10px */
+    padding: 10px;
     width: 95%;
     max-width: 900px;
     color: white;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-top: 15px; /* Reduzir margem superior */
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 
 .caixa-previsao-estendida h2 {
-    margin-bottom: 15px; /* Reduzir margem */
-    font-size: 1.5em; /* Reduzir para 1.5em */
+    margin-bottom: 15px;
+    font-size: 1.5em;
     color: #f0f0f0;
 }
 
@@ -201,17 +204,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px; /* Reduzir para 10px */
-    padding: 5px 0; /* Reduzir padding */
+    gap: 10px;
+    padding: 5px 0;
 }
 
 .card-previsao-diaria {
-    flex: 0 0 calc(20% - 10px); /* Ajustar para o novo gap */
-    min-width: 90px; /* Reduzir min-width */
-    max-width: 150px; /* Ajustar max-width */
+    flex: 0 0 calc(20% - 10px);
+    min-width: 90px;
+    max-width: 150px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 10px 5px; /* Reduzir padding */
+    padding: 10px 5px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out;
@@ -224,9 +227,9 @@ body {
 
 .card-previsao-diaria:hover {
     transform: translateY(-8px);
-    /* Efeito de elevação ao passar o mouse */
+
     background-color: rgba(255, 255, 255, 0.2);
-    /* Mudar cor ao passar o mouse */
+
 }
 
 .card-previsao-diaria h3 {
@@ -243,37 +246,37 @@ body {
 }
 
 .card-previsao-diaria img {
-    width: 40px; /* Reduzir para 40px */
+    width: 40px;
     height: 40px;
     margin: 0 auto 5px auto;
 }
 
 .card-previsao-diaria .temp-min-max {
-    font-size: 0.85em; /* Reduzir para 0.85em */
+    font-size: 0.85em;
     font-weight: bold;
     color: #fff;
-    margin-top: 5px; /* Reduzir margem */
+    margin-top: 5px;
 }
 
-/* Media Queries para responsividade */
+
 @media (max-width: 1024px) {
     .card-previsao-diaria {
         flex: 0 0 calc(33.33% - 15px);
-        /* 3 cards por linha em tablets maiores */
+
     }
 }
 
 @media (max-width: 768px) {
     body {
         justify-content: flex-start;
-        /* Alinha ao topo em telas menores */
+
         padding: 10px;
     }
 
     .caixa-maior,
     .caixa-previsao-estendida {
         max-width: 100%;
-        /* Ocupa a largura total em telas pequenas */
+
         width: 98%;
         padding: 15px;
         margin-bottom: 15px;
@@ -281,7 +284,7 @@ body {
 
     .caixa-maior {
         margin-top: 20px;
-        /* Pequena margem superior em mobile */
+
     }
 
     .input-cidade {
@@ -302,21 +305,21 @@ body {
 
     .card-previsao-diaria {
         flex: 0 0 calc(50% - 15px);
-        /* 2 cards por linha em tablets menores */
+
         min-width: unset;
-        /* Remove min-width */
+
     }
 }
 
 @media (max-width: 480px) {
     .card-previsao-diaria {
         flex: 0 0 calc(100% - 15px);
-        /* 1 card por linha em celulares */
+
     }
 
     .caixa-maior,
     .caixa-previsao-estendida {
         border-radius: 15px;
-        /* Bordas um pouco menos arredondadas */
+
     }
 }
