@@ -1,10 +1,10 @@
 const key = "cab70cb1a862b4f0054100a318fd5ccc"; // Sua chave da API
 
-// Funções para mostrar e esconder o spinner
+
 function showLoadingSpinner() {
     const spinnerElement = document.getElementById("loading-spinner");
     if (spinnerElement) {
-        spinnerElement.style.display = "flex"; // Usa flex para centralizar o spinner
+        spinnerElement.style.display = "flex"; 
     }
 }
 
@@ -15,8 +15,8 @@ function hideLoadingSpinner() {
     }
 }
 
-// Função para exibir dados do TEMPO ATUAL na tela
-function renderCurrentWeather(dados) { // Nome correto da função
+
+function renderCurrentWeather(dados) { 
     console.log(dados);
 
     const mensagemErroElement = document.querySelector(".mensagem-erro");
@@ -115,13 +115,13 @@ async function renderDailyForecasts(forecastData) {
     });
 }
 
-// Função para buscar dados do tempo (atual e estendido)
+
 async function buscarCidade(cidade) {
     const mensagemErroElement = document.querySelector(".mensagem-erro");
     if (mensagemErroElement) {
         mensagemErroElement.style.display = "none";
     }
-    showLoadingSpinner(); // MOSTRAR O SPINNER
+    showLoadingSpinner(); 
 
     try {
         const currentWeatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${key}&lang=pt_br&units=metric`)
@@ -132,8 +132,7 @@ async function buscarCidade(cidade) {
                 }
                 return response.json();
             });
-        renderCurrentWeather(currentWeatherData); // Chamada para a função com o nome correto
-
+        renderCurrentWeather(currentWeatherData); 
         const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cidade}&appid=${key}&lang=pt_br&units=metric`)
             .then(response => {
                 if (!response.ok) {
@@ -151,7 +150,7 @@ async function buscarCidade(cidade) {
             mensagemErroElement.style.display = "block";
         }
 
-        // Limpa os dados na tela em caso de erro
+      
         document.querySelector(".cidade").innerHTML = "Cidade não encontrada";
         document.querySelector(".temp").innerHTML = " ";
         document.querySelector(".texto-previsao").innerHTML = " ";
@@ -167,11 +166,11 @@ async function buscarCidade(cidade) {
         if (containerCardsPrevisao) containerCardsPrevisao.innerHTML = "";
 
     } finally {
-        hideLoadingSpinner(); // ESCONDER O SPINNER
+        hideLoadingSpinner(); 
     }
 }
 
-// Função chamada ao clicar no botão de busca
+
 function cliqueiNoBotao() {
     const cidade = document.querySelector(".input-cidade").value.trim();
     if (cidade) {
@@ -185,13 +184,13 @@ function cliqueiNoBotao() {
     }
 }
 
-// Função para obter a localização automática
+
 function getLocalizacaoAutomatica() {
     const mensagemErroElement = document.querySelector(".mensagem-erro");
     if (mensagemErroElement) {
         mensagemErroElement.style.display = "none";
     }
-    showLoadingSpinner(); // MOSTRAR O SPINNER
+    showLoadingSpinner(); 
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
@@ -253,7 +252,7 @@ function getLocalizacaoAutomatica() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    getLocalizacaoAutomatica(); // Tenta obter a localização automática ao carregar a página
+    getLocalizacaoAutomatica(); 
 
     const searchButton = document.querySelector(".botao-busca");
     const cityInput = document.querySelector(".input-cidade");
