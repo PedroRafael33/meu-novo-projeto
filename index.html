@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <title>PedroClub - Previsão do Tempo</title>
+</head>
+
+<body>
+    <!-- Spinner de Carregamento -->
+    <div id="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="caixa-maior">
+        <!-- CONTAINER PARA O CAMPO DE BUSCA E O BOTÃO -->
+        <div class="busca-container">
+            <input class="input-cidade" placeholder="Digite o nome da sua cidade">
+            <button class="botao-busca" onclick="cliqueiNoBotao()">
+                <img class="img-busca" alt="busca" src="https://www.svgrepo.com/show/488200/find.svg">
+            </button>
+        </div>
+
+        <!-- SEÇÃO DO TEMPO ATUAL -->
+        <div class="caixa-tempo-atual">
+            <h2 class="cidade">Tempo em São Paulo</h2>
+            <p class="temp">21ºC</p>
+
+            <div class="caixa-menor">
+                <img class="img-previsao" alt="icone-info-tempo" src="https://openweathermap.org/img/wn/04n.png">
+                <p class="texto-previsao">Nublado</p>
+            </div>
+
+            <p class="umidade">Umidade: 76%</p>
+            <p class="sensacao-termica"></p>
+            <p class="velocidade-vento"></p>
+            <p class="pressao-atm"></p>
+        </div>
+
+        <!-- MENSAGEM DE ERRO (Visível apenas quando houver erro) -->
+        <p class="mensagem-erro" style="display: none; color: red; text-align: center; margin-top: 20px;"></p>
+    </div>
+
+    <!-- SEÇÃO PARA A PREVISÃO ESTENDIDA (FORA da caixa-maior) -->
+    <div class="caixa-previsao-estendida">
+        <h2>Previsão para os Próximos Dias</h2>
+        <div class="container-cards-previsao">
+            <!-- Os cards de previsão diária serão inseridos aqui pelo JavaScript -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
