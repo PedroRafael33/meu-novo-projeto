@@ -1,4 +1,4 @@
-const key = "cab70cb1a862b4f0054100a318fd5ccc"; // Sua chave da API
+const key = "cab70cb1a862b4f0054100a318fd5ccc"; 
 
 
 function showLoadingSpinner() {
